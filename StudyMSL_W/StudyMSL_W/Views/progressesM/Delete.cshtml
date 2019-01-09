@@ -1,0 +1,64 @@
+﻿@model StudyMSL_W.Models.progress
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>progress</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.user_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.content_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.content_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.content_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.content_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.content_desc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.content_desc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date_completed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date_completed)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

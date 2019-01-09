@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="StudyMSL_W.Default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Study MSL</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="~/assets/css/navigation.css" />
+	<link rel="stylesheet" href="~/assets/css/main.css" />
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+        <!-- Header -->
+	    <header id="header">
+            <!-- Top navigation -->
+                <div class="topnav">
+                    <!-- Left-aligned links (default) -->
+                    <div class="topnav-left">
+                        <a class="logo" href="<%= Page.ResolveUrl("~/login.aspx")%>">Study MSL</a>
+                    </div>
+                 </div>
+	    </header>
+
+        <div>
+            <asp:ContentPlaceHolder ID="cphBanner" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="cphContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="cphFooter" runat="server">
+            </asp:ContentPlaceHolder>
+            <br />
+            <footer>
+                <hr />
+                <center>
+                    &copy; <span> <%= DateTime.Now.Year %> </span> - Study MSL
+                </center>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>

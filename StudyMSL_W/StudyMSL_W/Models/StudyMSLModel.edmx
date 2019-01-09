@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="studymsl_dbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="feedback">
+          <Key>
+            <PropertyRef Name="feedback_id" />
+          </Key>
+          <Property Name="feedback_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="comment" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="learn">
+          <Key>
+            <PropertyRef Name="image_id" />
+          </Key>
+          <Property Name="image_id" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="image_type" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="image_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="image_name_malay" Type="varchar" MaxLength="50" />
+          <Property Name="image_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image_desc" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image_desc_malay" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uname" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="pword" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="progress">
+          <Key>
+            <PropertyRef Name="p_id" />
+          </Key>
+          <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="content_id" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="content_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="content_desc" Type="varchar" MaxLength="100" />
+          <Property Name="date_completed" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="question_type" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="image_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="question" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="answer" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="answerindex" Type="int" Nullable="false" />
+          <Property Name="answer1" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="answer2" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="answer3" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="answer4" Type="varchar" MaxLength="80" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spellingquestion">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="question_type" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="image_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="answer" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="image1_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image2_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image3_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image4_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image5_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image6_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image7_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image8_dir" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="userupload">
+          <Key>
+            <PropertyRef Name="image_id" />
+          </Key>
+          <Property Name="image_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image_type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="image_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="image_name_malay" Type="varchar" MaxLength="50" />
+          <Property Name="image_dir" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image_desc" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="image_desc_malay" Type="varchar" MaxLength="200" />
+          <Property Name="uploader" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="upload_time" Type="date" />
+        </EntityType>
+        <EntityContainer Name="studymsl_dbModelStoreContainer">
+          <EntitySet Name="feedback" EntityType="Self.feedback" Schema="studymsl_db" store:Type="Tables" />
+          <EntitySet Name="learn" EntityType="Self.learn" Schema="studymsl_db" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="studymsl_db" store:Type="Tables" />
+          <EntitySet Name="progress" EntityType="Self.progress" Schema="studymsl_db" store:Type="Tables" />
+          <EntitySet Name="question" EntityType="Self.question" Schema="studymsl_db" store:Type="Tables" />
+          <EntitySet Name="spellingquestion" EntityType="Self.spellingquestion" Schema="studymsl_db" store:Type="Tables" />
+          <EntitySet Name="userupload" EntityType="Self.userupload" Schema="studymsl_db" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="studymsl_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="feedback">
+          <Key>
+            <PropertyRef Name="feedback_id" />
+          </Key>
+          <Property Name="feedback_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="comment" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="learn">
+          <Key>
+            <PropertyRef Name="image_id" />
+          </Key>
+          <Property Name="image_id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_type" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_name_malay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="image_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_desc_malay" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="login">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pword" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="progress">
+          <Key>
+            <PropertyRef Name="p_id" />
+          </Key>
+          <Property Name="p_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="content_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="content_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="content_desc" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="date_completed" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="question">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="question_type" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="question1" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="answer" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="answerindex" Type="Int32" Nullable="false" />
+          <Property Name="answer1" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="answer2" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="answer3" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="answer4" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spellingquestion">
+          <Key>
+            <PropertyRef Name="question_id" />
+          </Key>
+          <Property Name="question_id" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="question_type" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="answer" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image1_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image2_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image3_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image4_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image5_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image6_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image7_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image8_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="userupload">
+          <Key>
+            <PropertyRef Name="image_id" />
+          </Key>
+          <Property Name="image_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_name_malay" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="image_dir" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_desc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="image_desc_malay" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="uploader" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="upload_time" Type="DateTime" />
+        </EntityType>
+        <EntityContainer Name="studymsl_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="feedbacks" EntityType="Self.feedback" />
+          <EntitySet Name="learns" EntityType="Self.learn" />
+          <EntitySet Name="logins" EntityType="Self.login" />
+          <EntitySet Name="progresses" EntityType="Self.progress" />
+          <EntitySet Name="questions" EntityType="Self.question" />
+          <EntitySet Name="spellingquestions" EntityType="Self.spellingquestion" />
+          <EntitySet Name="useruploads" EntityType="Self.userupload" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="studymsl_dbModelStoreContainer" CdmEntityContainer="studymsl_dbEntities">
+          <EntitySetMapping Name="feedbacks">
+            <EntityTypeMapping TypeName="studymsl_dbModel.feedback">
+              <MappingFragment StoreEntitySet="feedback">
+                <ScalarProperty Name="feedback_id" ColumnName="feedback_id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="learns">
+            <EntityTypeMapping TypeName="studymsl_dbModel.learn">
+              <MappingFragment StoreEntitySet="learn">
+                <ScalarProperty Name="image_id" ColumnName="image_id" />
+                <ScalarProperty Name="image_type" ColumnName="image_type" />
+                <ScalarProperty Name="image_name" ColumnName="image_name" />
+                <ScalarProperty Name="image_name_malay" ColumnName="image_name_malay" />
+                <ScalarProperty Name="image_dir" ColumnName="image_dir" />
+                <ScalarProperty Name="image_desc" ColumnName="image_desc" />
+                <ScalarProperty Name="image_desc_malay" ColumnName="image_desc_malay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="studymsl_dbModel.login">
+              <MappingFragment StoreEntitySet="login">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="uname" ColumnName="uname" />
+                <ScalarProperty Name="pword" ColumnName="pword" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="progresses">
+            <EntityTypeMapping TypeName="studymsl_dbModel.progress">
+              <MappingFragment StoreEntitySet="progress">
+                <ScalarProperty Name="p_id" ColumnName="p_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="content_id" ColumnName="content_id" />
+                <ScalarProperty Name="content_name" ColumnName="content_name" />
+                <ScalarProperty Name="content_desc" ColumnName="content_desc" />
+                <ScalarProperty Name="date_completed" ColumnName="date_completed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="questions">
+            <EntityTypeMapping TypeName="studymsl_dbModel.question">
+              <MappingFragment StoreEntitySet="question">
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="question_type" ColumnName="question_type" />
+                <ScalarProperty Name="image_dir" ColumnName="image_dir" />
+                <ScalarProperty Name="question1" ColumnName="question" />
+                <ScalarProperty Name="answer" ColumnName="answer" />
+                <ScalarProperty Name="answerindex" ColumnName="answerindex" />
+                <ScalarProperty Name="answer1" ColumnName="answer1" />
+                <ScalarProperty Name="answer2" ColumnName="answer2" />
+                <ScalarProperty Name="answer3" ColumnName="answer3" />
+                <ScalarProperty Name="answer4" ColumnName="answer4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spellingquestions">
+            <EntityTypeMapping TypeName="studymsl_dbModel.spellingquestion">
+              <MappingFragment StoreEntitySet="spellingquestion">
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="question_type" ColumnName="question_type" />
+                <ScalarProperty Name="image_dir" ColumnName="image_dir" />
+                <ScalarProperty Name="answer" ColumnName="answer" />
+                <ScalarProperty Name="image1_dir" ColumnName="image1_dir" />
+                <ScalarProperty Name="image2_dir" ColumnName="image2_dir" />
+                <ScalarProperty Name="image3_dir" ColumnName="image3_dir" />
+                <ScalarProperty Name="image4_dir" ColumnName="image4_dir" />
+                <ScalarProperty Name="image5_dir" ColumnName="image5_dir" />
+                <ScalarProperty Name="image6_dir" ColumnName="image6_dir" />
+                <ScalarProperty Name="image7_dir" ColumnName="image7_dir" />
+                <ScalarProperty Name="image8_dir" ColumnName="image8_dir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="useruploads">
+            <EntityTypeMapping TypeName="studymsl_dbModel.userupload">
+              <MappingFragment StoreEntitySet="userupload">
+                <ScalarProperty Name="image_id" ColumnName="image_id" />
+                <ScalarProperty Name="image_type" ColumnName="image_type" />
+                <ScalarProperty Name="image_name" ColumnName="image_name" />
+                <ScalarProperty Name="image_name_malay" ColumnName="image_name_malay" />
+                <ScalarProperty Name="image_dir" ColumnName="image_dir" />
+                <ScalarProperty Name="image_desc" ColumnName="image_desc" />
+                <ScalarProperty Name="image_desc_malay" ColumnName="image_desc_malay" />
+                <ScalarProperty Name="uploader" ColumnName="uploader" />
+                <ScalarProperty Name="upload_time" ColumnName="upload_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,90 @@
+﻿@model StudyMSL_W.Models.question
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>question</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.question_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image_dir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image_dir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.question1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.question1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.answer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.answer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.answerindex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.answerindex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.answer1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.answer1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.answer2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.answer2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.answer3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.answer3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.answer4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.answer4)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.question_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<StudyMSL_W.Models.spellingquestion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.question_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image_dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.answer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image1_dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image2_dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image3_dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image4_dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image5_dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image6_dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image7_dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image8_dir)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.question_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image_dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.answer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image1_dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image2_dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image3_dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image4_dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image5_dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image6_dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image7_dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image8_dir)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.question_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.question_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.question_id })
+        </td>
+    </tr>
+}
+
+</table>

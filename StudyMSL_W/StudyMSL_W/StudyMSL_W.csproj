@@ -1,0 +1,1008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FEE810EA-C6EA-462C-9EB3-1316A6915626}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StudyMSL_W</RootNamespace>
+    <AssemblyName>StudyMSL_W</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.5.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.5.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.7.2\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.7.2\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.7.2\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.7.2\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.7.2\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.7.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.7.2\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.EntityDataSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.EntityDataSource.6.0.0\lib\net40\Microsoft.AspNet.EntityDataSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.4\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.13\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.13.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.13\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.6\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.6\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\ApproveContents.aspx.cs">
+      <DependentUpon>ApproveContents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ApproveContents.aspx.designer.cs">
+      <DependentUpon>ApproveContents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DeleteContents.aspx.cs">
+      <DependentUpon>DeleteContents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DeleteContents.aspx.designer.cs">
+      <DependentUpon>DeleteContents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\feedbacksController.cs" />
+    <Compile Include="Controllers\feedbacksMController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\learnsController.cs" />
+    <Compile Include="Controllers\learnsMController.cs" />
+    <Compile Include="Controllers\loginsController.cs" />
+    <Compile Include="Controllers\loginsMController.cs" />
+    <Compile Include="Controllers\progressesController.cs" />
+    <Compile Include="Controllers\progressesMController.cs" />
+    <Compile Include="Controllers\questionsController.cs" />
+    <Compile Include="Controllers\questionsMController.cs" />
+    <Compile Include="Controllers\spellingquestionsController.cs" />
+    <Compile Include="Controllers\spellingquestionsMController.cs" />
+    <Compile Include="Controllers\useruploadsController.cs" />
+    <Compile Include="Controllers\useruploadsMController.cs" />
+    <Compile Include="Default.Master.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.Master.designer.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Default_Admin.Master.cs">
+      <DependentUpon>Default_Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default_Admin.Master.designer.cs">
+      <DependentUpon>Default_Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Default_User.Master.cs">
+      <DependentUpon>Default_User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default_User.Master.designer.cs">
+      <DependentUpon>Default_User.Master</DependentUpon>
+    </Compile>
+    <Compile Include="GamesPage.aspx.cs">
+      <DependentUpon>GamesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GamesPage.aspx.designer.cs">
+      <DependentUpon>GamesPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Games\MemoryMatchingGame.aspx.cs">
+      <DependentUpon>MemoryMatchingGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Games\MemoryMatchingGame.aspx.designer.cs">
+      <DependentUpon>MemoryMatchingGame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Games\PictureSpellingGame.aspx.cs">
+      <DependentUpon>PictureSpellingGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Games\PictureSpellingGame.aspx.designer.cs">
+      <DependentUpon>PictureSpellingGame.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Guest\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guest\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LearnPage.aspx.cs">
+      <DependentUpon>LearnPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LearnPage.aspx.designer.cs">
+      <DependentUpon>LearnPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learn\FingerspellingPage.aspx.cs">
+      <DependentUpon>FingerspellingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learn\FingerspellingPage.aspx.designer.cs">
+      <DependentUpon>FingerspellingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learn\LearningPage.aspx.cs">
+      <DependentUpon>LearningPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learn\LearningPage.aspx.designer.cs">
+      <DependentUpon>LearningPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learn\SentenceBuilder.aspx.cs">
+      <DependentUpon>SentenceBuilder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learn\SentenceBuilder.aspx.designer.cs">
+      <DependentUpon>SentenceBuilder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learn\SentenceBuilderResults.aspx.cs">
+      <DependentUpon>SentenceBuilderResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learn\SentenceBuilderResults.aspx.designer.cs">
+      <DependentUpon>SentenceBuilderResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learn\SentencePage.aspx.cs">
+      <DependentUpon>SentencePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learn\SentencePage.aspx.designer.cs">
+      <DependentUpon>SentencePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Learn\WordPage.aspx.cs">
+      <DependentUpon>WordPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Learn\WordPage.aspx.designer.cs">
+      <DependentUpon>WordPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\feedback.cs">
+      <DependentUpon>StudyMSLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\learn.cs">
+      <DependentUpon>StudyMSLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\login.cs">
+      <DependentUpon>StudyMSLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\progress.cs">
+      <DependentUpon>StudyMSLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\question.cs">
+      <DependentUpon>StudyMSLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\spellingquestion.cs">
+      <DependentUpon>StudyMSLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudyMSLModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudyMSLModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudyMSLModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudyMSLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudyMSLModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudyMSLModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\userupload.cs">
+      <DependentUpon>StudyMSLModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuizzesPage.aspx.cs">
+      <DependentUpon>QuizzesPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuizzesPage.aspx.designer.cs">
+      <DependentUpon>QuizzesPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quizzes\FillintheBlankQuiz.aspx.cs">
+      <DependentUpon>FillintheBlankQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quizzes\FillintheBlankQuiz.aspx.designer.cs">
+      <DependentUpon>FillintheBlankQuiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Quizzes\MultipleChoiceQuiz.aspx.cs">
+      <DependentUpon>MultipleChoiceQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Quizzes\MultipleChoiceQuiz.aspx.designer.cs">
+      <DependentUpon>MultipleChoiceQuiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchDetails.aspx.cs">
+      <DependentUpon>SearchDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchDetails.aspx.designer.cs">
+      <DependentUpon>SearchDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\ViewProgress.aspx.cs">
+      <DependentUpon>ViewProgress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\ViewProgress.aspx.designer.cs">
+      <DependentUpon>ViewProgress.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\ApproveContents.aspx" />
+    <Content Include="Admin\DeleteContents.aspx" />
+    <Content Include="Admin\Index.aspx" />
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\carousel.css" />
+    <Content Include="assets\css\flickity.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\navigation.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\js\bootstrap.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\breakpoints.min.js" />
+    <Content Include="assets\js\browser.min.js" />
+    <Content Include="assets\js\carousel.js" />
+    <Content Include="assets\js\flickity2.0.11.pkgd.js" />
+    <Content Include="assets\js\flickity2.0.11.pkgd.min.js" />
+    <Content Include="assets\js\flickity2.1.2.pkgd.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\main.js" />
+    <Content Include="assets\js\navigation.js" />
+    <Content Include="assets\js\util.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GamesPage.aspx" />
+    <Content Include="Games\MemoryMatchingGame.aspx" />
+    <Content Include="Games\PictureSpellingGame.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Guest\Index.aspx" />
+    <Content Include="images\banner.jpg" />
+    <Content Include="images\banner.mp4" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\cta01.jpg" />
+    <Content Include="LearnPage.aspx" />
+    <Content Include="Learn\FingerspellingPage.aspx" />
+    <Content Include="Learn\LearningPage.aspx" />
+    <Content Include="Learn\SentenceBuilder.aspx" />
+    <Content Include="Learn\SentenceBuilderResults.aspx" />
+    <Content Include="Learn\SentencePage.aspx" />
+    <Content Include="Learn\WordPage.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Models\StudyMSLModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudyMSLModel.edmx</DependentUpon>
+      <LastGenOutput>StudyMSLModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StudyMSLModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudyMSLModel.edmx</DependentUpon>
+      <LastGenOutput>StudyMSLModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="QuizzesPage.aspx" />
+    <Content Include="Quizzes\FillintheBlankQuiz.aspx" />
+    <Content Include="Quizzes\MultipleChoiceQuiz.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Default.Master" />
+    <Content Include="Default_Admin.Master" />
+    <Content Include="Default_User.Master" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\sass\base\_page.scss" />
+    <Content Include="assets\sass\base\_reset.scss" />
+    <Content Include="assets\sass\base\_typography.scss" />
+    <Content Include="assets\sass\components\_actions.scss" />
+    <Content Include="assets\sass\components\_box.scss" />
+    <Content Include="assets\sass\components\_button.scss" />
+    <Content Include="assets\sass\components\_form.scss" />
+    <Content Include="assets\sass\components\_grid.scss" />
+    <Content Include="assets\sass\components\_highlights.scss" />
+    <Content Include="assets\sass\components\_icon.scss" />
+    <Content Include="assets\sass\components\_icons.scss" />
+    <Content Include="assets\sass\components\_image.scss" />
+    <Content Include="assets\sass\components\_inner.scss" />
+    <Content Include="assets\sass\components\_list.scss" />
+    <Content Include="assets\sass\components\_table.scss" />
+    <Content Include="assets\sass\components\_testimonials.scss" />
+    <Content Include="assets\sass\components\_wrapper.scss" />
+    <Content Include="assets\sass\layout\_banner.scss" />
+    <Content Include="assets\sass\layout\_cta.scss" />
+    <Content Include="assets\sass\layout\_footer.scss" />
+    <Content Include="assets\sass\layout\_header.scss" />
+    <Content Include="assets\sass\layout\_heading.scss" />
+    <Content Include="assets\sass\layout\_main.scss" />
+    <Content Include="assets\sass\layout\_menu.scss" />
+    <Content Include="assets\sass\libs\_breakpoints.scss" />
+    <Content Include="assets\sass\libs\_flexgrid.scss" />
+    <Content Include="assets\sass\libs\_functions.scss" />
+    <Content Include="assets\sass\libs\_grid.scss" />
+    <Content Include="assets\sass\libs\_mixins.scss" />
+    <Content Include="assets\sass\libs\_vars.scss" />
+    <Content Include="assets\sass\libs\_vendor.scss" />
+    <Content Include="assets\sass\main.scss" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\js\flickity2.1.2.pkgd.min.js" />
+    <EntityDeploy Include="Models\StudyMSLModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudyMSLModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StudyMSLModel.edmx.diagram">
+      <DependentUpon>StudyMSLModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\studymsl - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\studymsl - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Search.aspx" />
+    <Content Include="SearchDetails.aspx" />
+    <Content Include="uploads\alphabets\Alphabet_A.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_B.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_C.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_D.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_E.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_F.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_G.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_H.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_I.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_J.gif" />
+    <Content Include="uploads\alphabets\Alphabet_K.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_L.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_M.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_N.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_O.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_P.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_Q.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_R.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_S.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_T.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_U.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_V.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_W.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_X.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_Y.jpg" />
+    <Content Include="uploads\alphabets\Alphabet_Z.gif" />
+    <Content Include="uploads\labels\lblAlphabet_A.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_B.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_C.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_D.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_E.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_F.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_G.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_H.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_I.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_J.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_K.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_L.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_M.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_N.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_O.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_P.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_Q.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_R.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_S.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_T.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_U.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_V.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_W.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_X.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_Y.jpg" />
+    <Content Include="uploads\labels\lblAlphabet_Z.jpg" />
+    <Content Include="uploads\labels\lblNumber_0.jpg" />
+    <Content Include="uploads\labels\lblNumber_1.jpg" />
+    <Content Include="uploads\labels\lblNumber_10.jpg" />
+    <Content Include="uploads\labels\lblNumber_100.jpg" />
+    <Content Include="uploads\labels\lblNumber_11.jpg" />
+    <Content Include="uploads\labels\lblNumber_12.jpg" />
+    <Content Include="uploads\labels\lblNumber_13.jpg" />
+    <Content Include="uploads\labels\lblNumber_14.jpg" />
+    <Content Include="uploads\labels\lblNumber_15.jpg" />
+    <Content Include="uploads\labels\lblNumber_16.jpg" />
+    <Content Include="uploads\labels\lblNumber_17.jpg" />
+    <Content Include="uploads\labels\lblNumber_18.jpg" />
+    <Content Include="uploads\labels\lblNumber_19.jpg" />
+    <Content Include="uploads\labels\lblNumber_2.jpg" />
+    <Content Include="uploads\labels\lblNumber_20.jpg" />
+    <Content Include="uploads\labels\lblNumber_21.jpg" />
+    <Content Include="uploads\labels\lblNumber_22.jpg" />
+    <Content Include="uploads\labels\lblNumber_23.jpg" />
+    <Content Include="uploads\labels\lblNumber_24.jpg" />
+    <Content Include="uploads\labels\lblNumber_25.jpg" />
+    <Content Include="uploads\labels\lblNumber_26.jpg" />
+    <Content Include="uploads\labels\lblNumber_27.jpg" />
+    <Content Include="uploads\labels\lblNumber_28.jpg" />
+    <Content Include="uploads\labels\lblNumber_29.jpg" />
+    <Content Include="uploads\labels\lblNumber_3.jpg" />
+    <Content Include="uploads\labels\lblNumber_30.jpg" />
+    <Content Include="uploads\labels\lblNumber_31.jpg" />
+    <Content Include="uploads\labels\lblNumber_32.jpg" />
+    <Content Include="uploads\labels\lblNumber_33.jpg" />
+    <Content Include="uploads\labels\lblNumber_34.jpg" />
+    <Content Include="uploads\labels\lblNumber_35.jpg" />
+    <Content Include="uploads\labels\lblNumber_36.jpg" />
+    <Content Include="uploads\labels\lblNumber_37.jpg" />
+    <Content Include="uploads\labels\lblNumber_38.jpg" />
+    <Content Include="uploads\labels\lblNumber_39.jpg" />
+    <Content Include="uploads\labels\lblNumber_4.jpg" />
+    <Content Include="uploads\labels\lblNumber_40.jpg" />
+    <Content Include="uploads\labels\lblNumber_41.jpg" />
+    <Content Include="uploads\labels\lblNumber_42.jpg" />
+    <Content Include="uploads\labels\lblNumber_43.jpg" />
+    <Content Include="uploads\labels\lblNumber_44.jpg" />
+    <Content Include="uploads\labels\lblNumber_45.jpg" />
+    <Content Include="uploads\labels\lblNumber_46.jpg" />
+    <Content Include="uploads\labels\lblNumber_47.jpg" />
+    <Content Include="uploads\labels\lblNumber_48.jpg" />
+    <Content Include="uploads\labels\lblNumber_49.jpg" />
+    <Content Include="uploads\labels\lblNumber_5.jpg" />
+    <Content Include="uploads\labels\lblNumber_50.jpg" />
+    <Content Include="uploads\labels\lblNumber_51.jpg" />
+    <Content Include="uploads\labels\lblNumber_52.jpg" />
+    <Content Include="uploads\labels\lblNumber_53.jpg" />
+    <Content Include="uploads\labels\lblNumber_54.jpg" />
+    <Content Include="uploads\labels\lblNumber_55.jpg" />
+    <Content Include="uploads\labels\lblNumber_56.jpg" />
+    <Content Include="uploads\labels\lblNumber_57.jpg" />
+    <Content Include="uploads\labels\lblNumber_58.jpg" />
+    <Content Include="uploads\labels\lblNumber_59.jpg" />
+    <Content Include="uploads\labels\lblNumber_6.jpg" />
+    <Content Include="uploads\labels\lblNumber_60.jpg" />
+    <Content Include="uploads\labels\lblNumber_61.jpg" />
+    <Content Include="uploads\labels\lblNumber_62.jpg" />
+    <Content Include="uploads\labels\lblNumber_63.jpg" />
+    <Content Include="uploads\labels\lblNumber_64.jpg" />
+    <Content Include="uploads\labels\lblNumber_65.jpg" />
+    <Content Include="uploads\labels\lblNumber_66.jpg" />
+    <Content Include="uploads\labels\lblNumber_67.jpg" />
+    <Content Include="uploads\labels\lblNumber_68.jpg" />
+    <Content Include="uploads\labels\lblNumber_69.jpg" />
+    <Content Include="uploads\labels\lblNumber_7.jpg" />
+    <Content Include="uploads\labels\lblNumber_70.jpg" />
+    <Content Include="uploads\labels\lblNumber_71.jpg" />
+    <Content Include="uploads\labels\lblNumber_72.jpg" />
+    <Content Include="uploads\labels\lblNumber_73.jpg" />
+    <Content Include="uploads\labels\lblNumber_74.jpg" />
+    <Content Include="uploads\labels\lblNumber_75.jpg" />
+    <Content Include="uploads\labels\lblNumber_76.jpg" />
+    <Content Include="uploads\labels\lblNumber_77.jpg" />
+    <Content Include="uploads\labels\lblNumber_78.jpg" />
+    <Content Include="uploads\labels\lblNumber_79.jpg" />
+    <Content Include="uploads\labels\lblNumber_8.jpg" />
+    <Content Include="uploads\labels\lblNumber_80.jpg" />
+    <Content Include="uploads\labels\lblNumber_81.jpg" />
+    <Content Include="uploads\labels\lblNumber_82.jpg" />
+    <Content Include="uploads\labels\lblNumber_83.jpg" />
+    <Content Include="uploads\labels\lblNumber_84.jpg" />
+    <Content Include="uploads\labels\lblNumber_85.jpg" />
+    <Content Include="uploads\labels\lblNumber_86.jpg" />
+    <Content Include="uploads\labels\lblNumber_87.jpg" />
+    <Content Include="uploads\labels\lblNumber_88.jpg" />
+    <Content Include="uploads\labels\lblNumber_89.jpg" />
+    <Content Include="uploads\labels\lblNumber_9.jpg" />
+    <Content Include="uploads\labels\lblNumber_90.jpg" />
+    <Content Include="uploads\labels\lblNumber_91.jpg" />
+    <Content Include="uploads\labels\lblNumber_92.jpg" />
+    <Content Include="uploads\labels\lblNumber_93.jpg" />
+    <Content Include="uploads\labels\lblNumber_94.jpg" />
+    <Content Include="uploads\labels\lblNumber_95.jpg" />
+    <Content Include="uploads\labels\lblNumber_96.jpg" />
+    <Content Include="uploads\labels\lblNumber_97.jpg" />
+    <Content Include="uploads\labels\lblNumber_98.jpg" />
+    <Content Include="uploads\labels\lblNumber_99.jpg" />
+    <Content Include="uploads\numbers\Number_1.jpg" />
+    <Content Include="uploads\numbers\Number_10.gif" />
+    <Content Include="uploads\numbers\Number_2.jpg" />
+    <Content Include="uploads\numbers\Number_3.jpg" />
+    <Content Include="uploads\numbers\Number_4.jpg" />
+    <Content Include="uploads\numbers\Number_5.jpg" />
+    <Content Include="uploads\numbers\Number_6.jpg" />
+    <Content Include="uploads\numbers\Number_7.jpg" />
+    <Content Include="uploads\numbers\Number_8.jpg" />
+    <Content Include="uploads\numbers\Number_9.jpg" />
+    <Content Include="uploads\resources\Icon_Alphabet_200.png" />
+    <Content Include="uploads\resources\Icon_Contribute_128.png" />
+    <Content Include="uploads\resources\Icon_GameQuiz_128.png" />
+    <Content Include="uploads\resources\Icon_Games_128.png" />
+    <Content Include="uploads\resources\Icon_Home_128.png" />
+    <Content Include="uploads\resources\Icon_Learn_128.png" />
+    <Content Include="uploads\resources\Icon_Login_128.png" />
+    <Content Include="uploads\resources\Icon_Logout_128.png" />
+    <Content Include="uploads\resources\Icon_Number_200.png" />
+    <Content Include="uploads\resources\Icon_Password_128.png" />
+    <Content Include="uploads\resources\Icon_Progress_128.png" />
+    <Content Include="uploads\resources\Icon_Question_Mark_256.png" />
+    <Content Include="uploads\resources\Icon_Search_128.png" />
+    <Content Include="uploads\resources\Icon_Settings_128.png" />
+    <Content Include="uploads\resources\Icon_StudyMSL_v4.png" />
+    <Content Include="uploads\words\Aeroplane.gif" />
+    <Content Include="uploads\words\Assalamualaikum.gif" />
+    <Content Include="uploads\words\Bicycle.gif" />
+    <Content Include="uploads\words\Book.gif" />
+    <Content Include="uploads\words\Bus.gif" />
+    <Content Include="uploads\words\Can.gif" />
+    <Content Include="uploads\words\Car.gif" />
+    <Content Include="uploads\words\Child.gif" />
+    <Content Include="uploads\words\Congratulation.gif" />
+    <Content Include="uploads\words\Datin.jpg" />
+    <Content Include="uploads\words\Dato.jpg" />
+    <Content Include="uploads\words\Daughter.gif" />
+    <Content Include="uploads\words\Eat.gif" />
+    <Content Include="uploads\words\Elder_Brother.gif" />
+    <Content Include="uploads\words\Elder_Sister.gif" />
+    <Content Include="uploads\words\Excuse.gif" />
+    <Content Include="uploads\words\Family.gif" />
+    <Content Include="uploads\words\Father.jpg" />
+    <Content Include="uploads\words\Female.gif" />
+    <Content Include="uploads\words\Ferry.gif" />
+    <Content Include="uploads\words\Fine.gif" />
+    <Content Include="uploads\words\Goodbye.gif" />
+    <Content Include="uploads\words\Good_Afternoon.gif" />
+    <Content Include="uploads\words\Good_Evening.gif" />
+    <Content Include="uploads\words\Good_Morning.gif" />
+    <Content Include="uploads\words\Good_Night.gif" />
+    <Content Include="uploads\words\Happy_Anniversary.gif" />
+    <Content Include="uploads\words\Happy_Birthday.gif" />
+    <Content Include="uploads\words\Heavy.gif" />
+    <Content Include="uploads\words\Hello.gif" />
+    <Content Include="uploads\words\He_Or_She.gif" />
+    <Content Include="uploads\words\How_Are_You.gif" />
+    <Content Include="uploads\words\I.jpg" />
+    <Content Include="uploads\words\Invite.gif" />
+    <Content Include="uploads\words\Like.gif" />
+    <Content Include="uploads\words\Love%28Cinta%29.jpg" />
+    <Content Include="uploads\words\Love%28Sayang%29.jpg" />
+    <Content Include="uploads\words\Madam.gif" />
+    <Content Include="uploads\words\Miss%28Saudari%29.gif" />
+    <Content Include="uploads\words\Miss.gif" />
+    <Content Include="uploads\words\Mister%28Saudara%29.gif" />
+    <Content Include="uploads\words\Mister.gif" />
+    <Content Include="uploads\words\Mother.jpg" />
+    <Content Include="uploads\words\Must.gif" />
+    <Content Include="uploads\words\Name.gif" />
+    <Content Include="uploads\words\No.gif" />
+    <Content Include="uploads\words\Not_Yet.gif" />
+    <Content Include="uploads\words\Please%28Sila%29.gif" />
+    <Content Include="uploads\words\Please%28Tolong%29.gif" />
+    <Content Include="uploads\words\Prince.jpg" />
+    <Content Include="uploads\words\Princess.jpg" />
+    <Content Include="uploads\words\Regards.gif" />
+    <Content Include="uploads\words\Self.gif" />
+    <Content Include="uploads\words\Shake_Hands.gif" />
+    <Content Include="uploads\words\Sir.gif" />
+    <Content Include="uploads\words\Son.gif" />
+    <Content Include="uploads\words\Thank_You.gif" />
+    <Content Include="uploads\words\That.gif" />
+    <Content Include="uploads\words\They.gif" />
+    <Content Include="uploads\words\Us.gif" />
+    <Content Include="uploads\words\Waalaikumusalam.gif" />
+    <Content Include="uploads\words\We.gif" />
+    <Content Include="uploads\words\Welcome.gif" />
+    <Content Include="uploads\words\Well.gif" />
+    <Content Include="uploads\words\Who.gif" />
+    <Content Include="uploads\words\Yes.gif" />
+    <Content Include="uploads\words\You.gif" />
+    <Content Include="uploads\words\Younger_Brother.gif" />
+    <Content Include="uploads\words\Younger_Sister.gif" />
+    <Content Include="uploads\words\Your.gif" />
+    <Content Include="uploads\words\You_Are_Welcome.gif" />
+    <Content Include="User\ChangePassword.aspx" />
+    <Content Include="User\Index.aspx" />
+    <Content Include="User\ViewProgress.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\feedbacksM\Create.cshtml" />
+    <Content Include="Views\feedbacksM\Delete.cshtml" />
+    <Content Include="Views\feedbacksM\Details.cshtml" />
+    <Content Include="Views\feedbacksM\Edit.cshtml" />
+    <Content Include="Views\feedbacksM\Index.cshtml" />
+    <Content Include="Views\learnsM\Create.cshtml" />
+    <Content Include="Views\learnsM\Delete.cshtml" />
+    <Content Include="Views\learnsM\Details.cshtml" />
+    <Content Include="Views\learnsM\Edit.cshtml" />
+    <Content Include="Views\learnsM\Index.cshtml" />
+    <Content Include="Views\loginsM\Create.cshtml" />
+    <Content Include="Views\loginsM\Delete.cshtml" />
+    <Content Include="Views\loginsM\Details.cshtml" />
+    <Content Include="Views\loginsM\Edit.cshtml" />
+    <Content Include="Views\loginsM\Index.cshtml" />
+    <Content Include="Views\progressesM\Create.cshtml" />
+    <Content Include="Views\progressesM\Delete.cshtml" />
+    <Content Include="Views\progressesM\Details.cshtml" />
+    <Content Include="Views\progressesM\Edit.cshtml" />
+    <Content Include="Views\progressesM\Index.cshtml" />
+    <Content Include="Views\questionsM\Create.cshtml" />
+    <Content Include="Views\questionsM\Delete.cshtml" />
+    <Content Include="Views\questionsM\Details.cshtml" />
+    <Content Include="Views\questionsM\Edit.cshtml" />
+    <Content Include="Views\questionsM\Index.cshtml" />
+    <Content Include="Views\spellingquestionsM\Create.cshtml" />
+    <Content Include="Views\spellingquestionsM\Delete.cshtml" />
+    <Content Include="Views\spellingquestionsM\Details.cshtml" />
+    <Content Include="Views\spellingquestionsM\Edit.cshtml" />
+    <Content Include="Views\spellingquestionsM\Index.cshtml" />
+    <Content Include="Views\useruploadsM\Create.cshtml" />
+    <Content Include="Views\useruploadsM\Delete.cshtml" />
+    <Content Include="Views\useruploadsM\Details.cshtml" />
+    <Content Include="Views\useruploadsM\Edit.cshtml" />
+    <Content Include="Views\useruploadsM\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="uploads\user_uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55399</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55399/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

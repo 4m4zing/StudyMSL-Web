@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default_User.master.cs" Inherits="StudyMSL_W.Default_User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Study MSL</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="stylesheet" href="~/assets/css/navigation.css" />
+	<link rel="stylesheet" href="~/assets/css/main.css" />
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+
+
+        <%-- //Scripts --%>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="assets/js/navigation.js" />
+            </Scripts>
+        </asp:ScriptManager>
+
+
+        <%-- //Contents --%>
+        <div id="main">
+            <!-- Header -->
+	        <header id="header">
+                <!-- Top navigation -->
+                <div class="topnav">
+                    <!-- Left-aligned links (default) -->
+                    <div class="topnav-left">
+                        <a href="#" runat="server" onserverclick="aHome_OnClicked" >Study MSL</a>
+                    </div>
+                    <!-- Centered link -->
+                    <div class="topnav-centered">
+                        <a href="#" runat="server" onserverclick="aHome_OnClicked" >Home</a>
+                        <a href="<%= Page.ResolveUrl("~/learnpage.aspx")%>" >Learn</a>
+                        <a href="<%= Page.ResolveUrl("~/quizzespage.aspx")%>" >Quizzes</a>
+                        <a href="<%= Page.ResolveUrl("~/gamespage.aspx")%>" >Games</a>
+                    </div>
+                    <!-- Right-aligned links -->
+                    <div class="topnav-right" onclick="hamburger(this)">
+                        <div class="acontainer" >
+                            <a id="myA" onmouseover="changeColor()" onmouseout="resetColor()">
+                                <asp:Label ID="lblUsername" runat="server"></asp:Label>
+                            </a>
+                        </div>
+                        <div class="hamcontainer" onmouseover="changeColor()" onmouseout="resetColor()">
+                            <div id="hambar1"></div>
+                            <div id="hambar2"></div>
+                            <div id="hambar3"></div>
+                        </div>
+                    </div>
+                 </div>
+	        </header>
+            
+
+            <%-- Banner --%>
+            <div>
+                <%-- Banner ContentPlaceHolder --%>
+                <asp:ContentPlaceHolder ID="cphBanner" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            
+            <%-- Contents --%>
+            <div>
+                <%-- Contents ContentPlaceHolder --%>
+                <asp:ContentPlaceHolder ID="cphContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            
+            <%-- Footer --%>
+            <div>
+                <asp:ContentPlaceHolder ID="cphFooter" runat="server">
+                </asp:ContentPlaceHolder>
+                <br />
+                <footer>
+                    <hr />
+                    <center>
+                        &copy; <span> <%= DateTime.Now.Year %> </span> - Study MSL
+                    </center>
+                </footer>
+            </div>
+        </div>
+
+
+        <%-- //SidebarNavigation --%>
+        <div id="mySidenav" class="sidenav">
+            <a href="<%= Page.ResolveUrl("~/search.aspx")%>">Search</a>
+            <asp:Label ID="lblNotGuest" runat="server" Visible="true">
+                <a href="<%= Page.ResolveUrl("~/user/viewprogress.aspx")%>">View Progress</a>
+                <a href="<%= Page.ResolveUrl("~/user/changepassword.aspx")%>">Change Password</a>
+            </asp:Label>
+            <a href="<%= Page.ResolveUrl("~/login.aspx")%>">Logout</a>
+
+            <%-- SidebarNavigation ContentPlaceHolder --%>
+            <%--<asp:ContentPlaceHolder ID="cphSidebar" runat="server">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            </asp:ContentPlaceHolder>--%>
+        </div>
+    </form>
+</body>
+</html>

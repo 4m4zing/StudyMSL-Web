@@ -1,0 +1,81 @@
+﻿@model IEnumerable<StudyMSL_W.Models.question>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.question_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image_dir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.question1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.answer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.answerindex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.answer1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.answer2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.answer3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.answer4)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.question_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image_dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.question1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.answer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.answerindex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.answer1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.answer2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.answer3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.answer4)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.question_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.question_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.question_id })
+        </td>
+    </tr>
+}
+
+</table>
